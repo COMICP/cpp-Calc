@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-bool is_number(const std::string& s)
+bool is_number(const std::string& s) // This function returns if the input string can be converted to a double
 {
     try
     {
@@ -15,7 +15,7 @@ bool is_number(const std::string& s)
     return true;
 }
 
-double InputMath() {
+double InputMath() { // returns the number that the user wants to operate. 
     bool inputCheck = false;
     double userNum;
     std::string userImp;
@@ -35,7 +35,7 @@ double InputMath() {
     }
 }
 
-string InputOperator() {
+string InputOperator() { // returns the operator for the operation. Doesnt return untill a proper input is entered. 
     string operateChar;
     
     while (operateChar != "+" && operateChar != "-" && operateChar != "/" && operateChar != "*" ) {
@@ -47,7 +47,7 @@ string InputOperator() {
 }
 
 
-double math() {
+double math() { // takes user inputs and does the operation. returns final answer. 
     double answer, firstNum, secondNum;//Initialize number variables.
     string operand;
 
@@ -77,7 +77,7 @@ double math() {
     return answer;
 }
 
-void mathLoop() {
+void mathLoop() { // loops untill a function is completed 
     double answer = 0;
     while (answer == 0) {
         try {
