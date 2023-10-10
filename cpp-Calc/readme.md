@@ -4,8 +4,6 @@ This program is a simple operation calculator. It asks the user for the first nu
 
 This software was created as a simple demonstration of user input and error handling. In this program, there are 3 user inputs that need to be properly formatted. 
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
 [Software Demo Video](https://youtu.be/XXA3EwNWS3g)
 
 # Development Environment
