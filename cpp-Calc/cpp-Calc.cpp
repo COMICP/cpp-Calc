@@ -1,20 +1,40 @@
 #include <iostream>
 #include <string>
 using namespace std;
-double InputMath() {
-    try {
-        double userNum;
-        std::string userImp;
-        std::cin >> userImp;
-        userNum = stod(userImp);
 
-        return userNum;
-        
+bool is_number(const std::string& s)
+{
+    try
+    {
+        std::stod(s);
     }
-    catch(int ){
+    catch (...)
+    {
+        return false;
+    }
+    return true;
+}
 
+double InputMath() {
+    bool inputCheck = false;
+    double userNum;
+    std::string userImp;
+
+    while (inputCheck == false) {
+
+        std::cin >> userImp;
+        inputCheck = is_number(userImp);
+        if (inputCheck) {
+
+            userNum = stod(userImp);
+            return userNum;
+        }
+        else {
+            cout << "Enter Valid Input\n";
+        }
     }
 }
+
 string InputOperator() {
     string operateChar;
     
@@ -24,9 +44,9 @@ string InputOperator() {
 
     }
     return operateChar;
-    
-
 }
+
+
 double math() {
     double answer, firstNum, secondNum;//Initialize number variables.
     string operand;
@@ -56,8 +76,8 @@ double math() {
     }
     return answer;
 }
-int main()
-{
+
+void mathLoop() {
     double answer = 0;
     while (answer == 0) {
         try {
@@ -71,9 +91,16 @@ int main()
     }
     std::cout << "answer = ";
     std::cout << answer;
+    cout << "\n";
+}
+int main()
+{
+    string continueChoice = "Y";
 
-
+    while (continueChoice == "Y" || continueChoice == "y") {
+        mathLoop();
+        cout << "Would you like to do another?\nEnter 'Y' to continue\n";
+        cin >> continueChoice;
+    }
 
 }
-
-
